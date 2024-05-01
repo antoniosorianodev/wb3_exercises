@@ -1,10 +1,10 @@
 function getSocSecTax(grossPay) {
-    social = (grossPay * 0.062);
+    social = (grossPay * 0.062).toFixed(2);
     return (social);
 }
 
 function getMedicareTax(grossPay) {
-    medicare = (grossPay * 0.0145);
+    medicare = (grossPay * 0.0145).toFixed(2);
     return (medicare);
 }
 
@@ -22,7 +22,7 @@ function getFederalTax(grossPay, withholdingCode) {
         let gap = (withholdingCode - 4)
         taxRate = 0.18 - (gap * 0.005);
     }
-    let federal = (grossPay * taxRate);
+    let federal = (grossPay * taxRate).toFixed(2);
     return (federal);
 }
 
