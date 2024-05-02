@@ -2,7 +2,7 @@
 
 function parseAndDisplay(someName) {
 
-    // create a variable to hold the first name
+    // create a variable to hold the full name
     let fullName = someName;
 
     // find the position of the first space
