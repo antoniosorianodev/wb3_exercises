@@ -12,26 +12,20 @@ function parseAndDisplay(someName) {
     if (firstSpaceIndex === -1) {
         console.log("Only name: " + fullName);
     }
-    // this is if we have 1 and only 1 space, so first and last only
-    else if (fullName.indexOf(" ") === fullName.lastIndexOf(" ")) {
-
+    // any other case goes here
+    else {
         let firstName = fullName.slice(0, firstSpaceIndex);
-        let lastName = fullName.slice(firstSpaceIndex + 1);
-        console.log("First name: " + firstName);
-        console.log("Last name: " + lastName);
-
-        // any other scenario goes here, I know a name of "first      second" will break this but this'll do for now
-    } else {
-        let firstName = fullName.slice(0, firstSpaceIndex);
-        let middleName = fullName.slice(firstSpaceIndex + 1, lastSpaceIndex);
-        let lastName = fullName.slice(lastSpaceIndex + 1);
+        let middleName = fullName.slice(firstSpaceIndex + 1, lastSpaceIndex).trim();
+        let lastName = fullName.slice(lastSpaceIndex + 1).trim();
 
         console.log("First name: " + firstName);
-        console.log("Middle name: " + middleName);
+        if (middleName.length > 0) {
+            console.log("Middle name: " + middleName);
+        }
         console.log("Last name: " + lastName);
     }
 }
 
-parseAndDisplay("Cher");
-parseAndDisplay("Brenda Kaye");
-parseAndDisplay("Dana Lynn Wyatt");
+parseAndDisplay("   Cher   ");
+parseAndDisplay("Brenda    Kaye   ");
+parseAndDisplay("      Dana      Lynn                      Wyatt");
