@@ -7,8 +7,8 @@ function parseAndDisplay(someName) {
     let firstSpaceIndex = fullName.indexOf(" ");
     let lastSpaceIndex = fullName.lastIndexOf(" ");
 
-    // if we have NO spaces in the name
     console.log("Name: " + fullName);
+    // if we have NO spaces in the name
     if (firstSpaceIndex === -1) {
         console.log("Only name: " + fullName);
     }
